@@ -38,7 +38,7 @@ export default function Home() {
 	const onFinish = async (values: any) => {
 		const { HttpStatusCode, status, data } = await request(
 			ta_id ? 'PUT' : 'POST',
-			`add_acc_zerodha/${ta_id && ta_id}`,
+			`add_acc_zerodha/${ta_id ? ta_id : ''}`,
 			{},
 			values
 		);
